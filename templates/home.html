@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .title a:hover{
+            text-decoration: none;
+        }
+        #inputbox{
+            width: 240px;
+            border-radius: 999px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="all" style="margin-left: 20px;">
+    <div class="form" style="margin-top: 50px;">
+        <form method="POST">
+            {% csrf_token %}
+            <label style="font-size: 20px;">Search For Something</label>
+            <input id="inputbox" class="form-control" type="text" name="data"><br>
+            <input type="submit" class="btn btn-success" value="Search">
+        </form>
+    </div><br><br>
+
+</body>
+</html>
+
+{% for i in complete_details %}
+<div class="complete">
+    <div class="title" style="font-size: 20px; color: blue;">
+        <a href="{{i.3}}"><b>{{i.0}}</b></a>
+    </div>
+    <div class="greenData" style="color: green;">
+        {{i.1}}
+    </div>
+    <div class="description">
+        {{i.2}}
+    </div>
+
+</div><br>
+{% endfor %}
+</div>
+</body>
